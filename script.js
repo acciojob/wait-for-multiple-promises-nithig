@@ -20,12 +20,12 @@ Promise.all(promises).then(results => {
 
     results.forEach(p => {
         const row = document.createElement("tr");
-        row.innerHTML = <td>${p.name}</td><td>${p.time}</td>;
+        row.innerHTML =`<td>${p.name}</td><td>${p.time}</td>`;
         tbody.appendChild(row);
     });
 
     const maxTime = Math.max(...results.map(p => parseFloat(p.time))).toFixed(3);
     const totalRow = document.createElement("tr");
-    totalRow.innerHTML = <td><strong>Total</strong></td><td>${maxTime}</td>;
+    totalRow.innerHTML = `<td><strong>Total</strong></td><td>${maxTime}</td>`;
     tbody.appendChild(totalRow);
 });
